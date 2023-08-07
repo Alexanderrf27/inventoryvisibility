@@ -1,0 +1,39 @@
+openapi: 3.0.1
+info:
+  title: Test and exercise for capitole-consulting-Inditex
+  description: When a grid of products is painted on the web fronts of commercial stores e-mail, it is necessary to filter those products that have run out of stock to facilitate the user to find products that he can buy
+  termsOfService: http://swagger.io/terms/
+  license:
+    name: Apache 2.0
+    url: http://springdoc.org
+  version: '0.1'
+servers:
+  - url: http://localhost:8080
+    description: Generated server url
+paths:
+  /products/v1/priceLast:
+    post:
+      tags:
+        - product-api-delegate
+      description: When a grid of products is painted on the web fronts of e-commerce stores, it is necessary to filter those products that have run out of stock to make it easier for the user to find products that they can buy.
+      operationId: getProductsVisibility
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProductsVisibilityResponse'
+components:
+  schemas:
+    ProductsVisibilityResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        sequence:
+          type: integer
+          format: int32
